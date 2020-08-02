@@ -18,9 +18,18 @@ generateBtn.addEventListener("click", writePassword);
 
 //String length between 8 and 128
 
-let length = prompt("How many characters long would you like your password?");
-  console.log(length);
+let passLength = prompt("Please enter a password length between 8 and 128.");
+console.log(passLength);
 
+while (passLength < 8 || passLength > 128) {
+  alert("Value must be between 8 and 128.");
+  let passLength = prompt("Please enter a password length between 8 and 128.");
+    
+  if (passLength >= 8 && passLength <= 128) {
+    console.log(passLength);
+    {break}
+  }
+}
 
 //Lowercase 
 let lowerCase = confirm("Would you like to include lower case letters?");
