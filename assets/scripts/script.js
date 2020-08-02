@@ -15,7 +15,6 @@ generateBtn.addEventListener("click", writePassword);
 
 
 //User prompt questions: 
-
 //Users choose a string length between 8 and 128
 
 let passLength = prompt("Please enter a password length between 8 and 128.");
@@ -75,3 +74,13 @@ const letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 const specChar = ["!", "@", "#", "$", "%", "^", "&", "*", "?",]
+
+//Variables that will produce random values for each array
+let randomLetter = letters[Math.floor(Math.random() * (letters.length))];
+console.log(randomLetter);
+
+let randomNumber = numbers[Math.floor(Math.random() * (numbers.length))];
+console.log(randomNumber);
+
+let randomChar = specChar[Math.floor(Math.random() * (specChar.length))];
+console.log(randomChar);
