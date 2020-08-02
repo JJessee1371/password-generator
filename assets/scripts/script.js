@@ -76,11 +76,16 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 const specChar = ["!", "@", "#", "$", "%", "^", "&", "*", "?",]
 
 //Variables that will produce random values for each array
-let randomLetter = letters[Math.floor(Math.random() * (letters.length))];
-console.log(randomLetter);
+let randomUpper = letters[Math.floor(Math.random() * (letters.length))];
+console.log(randomUpper);
+
+let randomLower = letters[Math.floor(Math.random() * (letters.length))];
+console.log(randomLower).toLowerCase();
 
 let randomNumber = numbers[Math.floor(Math.random() * (numbers.length))];
 console.log(randomNumber);
 
 let randomChar = specChar[Math.floor(Math.random() * (specChar.length))];
 console.log(randomChar);
+
+//Functions that will produce a random letter 
