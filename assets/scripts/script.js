@@ -16,11 +16,12 @@ generateBtn.addEventListener("click", writePassword);
 
 //User prompt questions: 
 
-//String length between 8 and 128
+//Users choose a string length between 8 and 128
 
 let passLength = prompt("Please enter a password length between 8 and 128.");
 console.log(passLength);
 
+//Code will run if the user has not entered a valid number
 while (passLength < 8 || passLength > 128) {
   alert("Value must be between 8 and 128.");
   let passLength = prompt("Please enter a password length between 8 and 128.");
@@ -31,22 +32,23 @@ while (passLength < 8 || passLength > 128) {
   }
 }
 
-//Lowercase 
+//Lowercase value prompt
 let lowerCase = confirm("Would you like to include lower case letters?");
 console.log(lowerCase);
 
-//Uppercase
+//Uppercase value prompt
 let upperCase = confirm("Would you like to include upper case letters?");
 console.log(upperCase);
 
-//Numeric
+//Numeric value prompt
 let num = confirm("Would you like to include numbers?");
 console.log(num);
 
-//Special characters
+//Special characters prompt
 let special = confirm("Would you like to include special characters?");
 console.log(special);
 
+//Code will run if user has not selected at least one character type to use in the password. 
 if (lowerCase === false && upperCase === false && num === false && special === false) {
   while (lowerCase === false && upperCase === false && num === false && special === false) {
     alert("At least one character selection must be made.");
