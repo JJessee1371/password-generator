@@ -47,6 +47,25 @@ console.log(num);
 let special = confirm("Would you like to include special characters?");
 console.log(special);
 
+if (lowerCase === false && upperCase === false && num === false && special === false) {
+  while (lowerCase === false && upperCase === false && num === false && special === false) {
+    alert("At least one character selection must be made.");
+
+    let lowerCase = confirm("Would you like to include lower case letters?");
+
+    let upperCase = confirm("Would you like to include upper case letters?");
+
+    let num = confirm("Would you like to include numbers?");
+
+    let special = confirm("Would you like to include special characters?");
+
+  if (lowerCase === true || upperCase === true || num === true || special === true) {
+    console.log(lowerCase, upperCase, num, special);
+    {break}
+    }
+  }
+}
+
 
 //Arrays for randomized choices by the computer
 const letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
