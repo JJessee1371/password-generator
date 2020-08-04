@@ -126,7 +126,7 @@ if (upperCase === false && lowerCase === false && num === false && special === f
 //Main function - generating a password from the desired values
 function generatePassword() {
 for (i = 0; i < passLength; i++) {
-  password = create[Math.floor(Math.random() * create.length)];
+  password = password + create[Math.floor(Math.random() * create.length)];
   }
   return password;
 }
