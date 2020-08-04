@@ -83,25 +83,44 @@ if (special === true) {
 }
 console.log(create);
 
-// //Code will run if user has not selected at least one character type to use in the password. 
-// if (upperCase === false && lowerCase === false && num === false && special === false) {
-//   while (lowerCase === false && upperCase === false && num === false && special === false) {
-//     alert("At least one character selection must be made.");
+//Code will run if user has not selected at least one character type to use in the password. 
+if (upperCase === false && lowerCase === false && num === false && special === false) {
+  while (upperCase === false && lowerCase === false && num === false && special === false) {
+    alert("At least one character selection must be made.");
 
-//     let lowerCase = confirm("Would you like to include lower case letters?");
+    let upperCase = confirm("Would you like to include upper case letters?");
+      if (upperCase === true) {
+        create = create.concat(upperLetters)
+      }
+      console.log(create);
 
-//     let upperCase = confirm("Would you like to include upper case letters?");
+    let lowerCase = confirm("Would you like to include lower case letters?");
+      if (lowerCase === true) {
+        for (i = 0; i < upperLetters.length; i++) {
+          lowerLetters = upperLetters[i].toLowerCase()
+          create = create.concat(lowerLetters);
+        }
+      }
+      console.log(create);
 
-//     let num = confirm("Would you like to include numbers?");
+    let num = confirm("Would you like to include numbers?");
+      if (num === true) {
+        create = create.concat(numbers);
+      }
+      console.log(create);
 
-//     let special = confirm("Would you like to include special characters?");
+    let special = confirm("Would you like to include special characters?");
+      if (special === true) {
+        create = create.concat(specChar);
+      }
+      console.log(create);
 
-//   if (lowerCase === true || upperCase === true || num === true || special === true) {
-//     console.log(lowerCase, upperCase, num, special);
-//     {break}
-//     }
-//   }
-// }
+  if (lowerCase === true || upperCase === true || num === true || special === true) {
+    console.log(lowerCase, upperCase, num, special);
+    {break}
+    }
+  }
+}
 
 // //Main function - generating a password from the desired values
 // function generatePassword(){
