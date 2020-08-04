@@ -13,6 +13,17 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+//Arrays for randomized choices by the computer
+const create = []
+
+const upperLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+
+const lowerLetters = []
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+const specChar = ["!", "@", "#", "$", "%", "^", "&", "*", "?", "~", "<", ">"]
+
 
 //User prompt questions: 
 //Users choose a string length between 8 and 128
@@ -31,23 +42,24 @@ while (passLength < 8 || passLength > 128) {
   }
 }
 
-//Lowercase value prompt
-let lowerCase = confirm("Would you like to include lower case letters?");
-console.log(lowerCase);
-
-if (lowerCase = true) {
-  create.push(upperLetters)
-}
-
 //Uppercase value prompt
 let upperCase = confirm("Would you like to include upper case letters?");
 console.log(upperCase);
 
 if (upperCase = true) {
+  create.push(upperLetters)
+}
+
+//Lowercase value prompt
+let lowerCase = confirm("Would you like to include lower case letters?");
+console.log(lowerCase);
+
+if (lowerCase = true) {
   for (i = 0; i < upperLetters.length; i++) {
     lowerLetters.push(upperLetters[i].toLowerCase());
   }
-  create.push(lowerLetters)
+  create.push(lowerLetters);
+  console.log(lowerLetters)
 }
 
 //Numeric value prompt
@@ -85,18 +97,6 @@ if (lowerCase === false && upperCase === false && num === false && special === f
     }
   }
 }
-
-
-//Arrays for randomized choices by the computer
-const create = []
-
-const upperLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-
-const lowerLetters = []
-
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-const specChar = ["!", "@", "#", "$", "%", "^", "&", "*", "?", "~", "<", ">"]
 
 // const randomize = {randomUpper, randomLower, randomNumber, randomChar}
 
