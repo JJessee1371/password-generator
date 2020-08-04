@@ -4,6 +4,7 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
+  console.log("generatePassword is working")
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
@@ -12,9 +13,9 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+console.log("writePassword is working")
 
 //Arrays for randomized choices by the computer
-
 let create = []
 
 const upperLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
@@ -28,7 +29,7 @@ const specChar = ["!", "@", "#", "$", "%", "^", "&", "*", "?", "~", "<", ">"]
 
 //User prompt questions: 
 
-//Users choose a string length between 8 and 128
+//User chooses a string length between 8 and 128
 let passLength = prompt("Please enter a password length between 8 and 128.");
 console.log(passLength);
 
@@ -122,9 +123,16 @@ if (upperCase === false && lowerCase === false && num === false && special === f
   }
 }
 
-// //Main function - generating a password from the desired values
-// function generatePassword(){
-// for (i = 0; i < passLength; i++) {
-//   let generate = create[Math.floor(Math.random() * create.length)];
-// }
-// }
+//Main function - generating a password from the desired values
+function generatePassword() {
+for (i = 0; i < passLength; i++) {
+  password = create[Math.floor(Math.random() * create.length)];
+  }
+  return password;
+}
+
+
+
+
+
+
