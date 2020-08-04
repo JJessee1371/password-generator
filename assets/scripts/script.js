@@ -14,11 +14,12 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 //Arrays for randomized choices by the computer
-const create = []
+
+let create = []
 
 const upperLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
-const lowerLetters = []
+let lowerLetters = []
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -46,57 +47,65 @@ while (passLength < 8 || passLength > 128) {
 let upperCase = confirm("Would you like to include upper case letters?");
 console.log(upperCase);
 
-if (upperCase = true) {
-  create.push(upperLetters);
+if (upperCase === true) {
+  create = create.concat(upperLetters)
 }
-// console.log(create);
+console.log(create);
+
 
 //Lowercase value prompt
 let lowerCase = confirm("Would you like to include lower case letters?");
 console.log(lowerCase);
 
-if (lowerCase = true) {
+if (lowerCase === true) {
   for (i = 0; i < upperLetters.length; i++) {
-    lowerLetters.push(upperLetters[i].toLowerCase());
+    lowerLetters = upperLetters[i].toLowerCase()
+    create = create.concat(lowerLetters);
   }
-  create.push(lowerLetters);
 }
-// console.log(create);
+console.log(create);
 
 //Numeric value prompt
 let num = confirm("Would you like to include numbers?");
 console.log(num);
 
-if (num = true) {
-  create.push(numbers);
+if (num === true) {
+  create = create.concat(numbers);
 }
-// console.log(create);
+console.log(create);
 
 //Special characters prompt
 let special = confirm("Would you like to include special characters?");
 console.log(special);
 
-if (special = true) {
-  create.push(specChar);
+if (special === true) {
+  create = create.concat(specChar);
 }
-// console.log(create);
+console.log(create);
 
-//Code will run if user has not selected at least one character type to use in the password. 
-if (upperCase === false && lowerCase === false && num === false && special === false) {
-  while (lowerCase === false && upperCase === false && num === false && special === false) {
-    alert("At least one character selection must be made.");
+// //Code will run if user has not selected at least one character type to use in the password. 
+// if (upperCase === false && lowerCase === false && num === false && special === false) {
+//   while (lowerCase === false && upperCase === false && num === false && special === false) {
+//     alert("At least one character selection must be made.");
 
-    let lowerCase = confirm("Would you like to include lower case letters?");
+//     let lowerCase = confirm("Would you like to include lower case letters?");
 
-    let upperCase = confirm("Would you like to include upper case letters?");
+//     let upperCase = confirm("Would you like to include upper case letters?");
 
-    let num = confirm("Would you like to include numbers?");
+//     let num = confirm("Would you like to include numbers?");
 
-    let special = confirm("Would you like to include special characters?");
+//     let special = confirm("Would you like to include special characters?");
 
-  if (lowerCase === true || upperCase === true || num === true || special === true) {
-    console.log(lowerCase, upperCase, num, special);
-    {break}
-    }
-  }
-}
+//   if (lowerCase === true || upperCase === true || num === true || special === true) {
+//     console.log(lowerCase, upperCase, num, special);
+//     {break}
+//     }
+//   }
+// }
+
+// //Main function - generating a password from the desired values
+// function generatePassword(){
+// for (i = 0; i < passLength; i++) {
+//   let generate = create[Math.floor(Math.random() * create.length)];
+// }
+// }
