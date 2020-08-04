@@ -3,7 +3,7 @@ Start point: User clicks on a button, "genreate password button"
 Collect user input for password criteria. 
     -Length
         -Min 8 and max 128 characters
-    -Specail characters
+    -Special characters
         -Which should be included?
     -Numbers
     -Upper and lowercase letters

@@ -35,17 +35,36 @@ while (passLength < 8 || passLength > 128) {
 let lowerCase = confirm("Would you like to include lower case letters?");
 console.log(lowerCase);
 
+if (lowerCase = true) {
+  create.push(upperLetters)
+}
+
 //Uppercase value prompt
 let upperCase = confirm("Would you like to include upper case letters?");
 console.log(upperCase);
+
+if (upperCase = true) {
+  for (i = 0; i < upperLetters.length; i++) {
+    lowerLetters.push(upperLetters[i].toLowerCase());
+  }
+  create.push(lowerLetters)
+}
 
 //Numeric value prompt
 let num = confirm("Would you like to include numbers?");
 console.log(num);
 
+if (num = true) {
+  create.push(numbers)
+}
+
 //Special characters prompt
 let special = confirm("Would you like to include special characters?");
 console.log(special);
+
+if (special = true) {
+  create.push(specChar)
+}
 
 //Code will run if user has not selected at least one character type to use in the password. 
 if (lowerCase === false && upperCase === false && num === false && special === false) {
@@ -69,23 +88,47 @@ if (lowerCase === false && upperCase === false && num === false && special === f
 
 
 //Arrays for randomized choices by the computer
-const letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+const create = []
+
+const upperLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+
+const lowerLetters = []
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-const specChar = ["!", "@", "#", "$", "%", "^", "&", "*", "?",]
+const specChar = ["!", "@", "#", "$", "%", "^", "&", "*", "?", "~", "<", ">"]
 
-//Variables that will produce random values for each array
-let randomUpper = letters[Math.floor(Math.random() * (letters.length))];
-console.log(randomUpper);
+// const randomize = {randomUpper, randomLower, randomNumber, randomChar}
 
-let randomLower = letters[Math.floor(Math.random() * (letters.length))];
-console.log(randomLower).toLowerCase();
+//Functions that will produce a random letter, number or character 
+// function randomUpper() {
+//   let upperChoice = letters[Math.floor(Math.random() * (letters.length))];
+//   console.log(upperChoice);
+// }
 
-let randomNumber = numbers[Math.floor(Math.random() * (numbers.length))];
-console.log(randomNumber);
+// function randomLower() {
+//   let lowerChoice = letters[Math.floor(Math.random() * (letters.length))];
+//   console.log(lowerChoice.toLowerCase());
+// }
 
-let randomChar = specChar[Math.floor(Math.random() * (specChar.length))];
-console.log(randomChar);
+// function randomNumber() {
+//   let numberChoice = numbers[Math.floor(Math.random() * (numbers.length))];
+//   console.log(numberChoice);
+// }
 
-//Functions that will produce a random letter 
+// function randomChar() {
+//   let specialChoice = specChar[Math.floor(Math.random() * (specChar.length))];
+//   console.log(specialChoice);
+// }
+
+// //Function chooses from all random values
+// let allRandom = randomize[Math.floor(Math.random() * (randomize.length))];
+// console.log(allRandom);
+
+//Code to be run based off of character choice input from user
+// if (lowerCase === true && upperCase === true && num === true && special === true) {
+//   for (i = 0; i < passLength; i++) {
+//     let password = randomize[Math.floor(Math.random() * (randomize.length))];
+//     console.log(password);
+//   }
+// }
