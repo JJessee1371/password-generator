@@ -129,12 +129,14 @@ if (upperCase === false && lowerCase === false && num === false && special === f
   }
 }
 
-//Main function - generating a password from the desired values and returning the password. 
+//Main function - generating a password from the desired values and returning the password.
+let password = "" 
 function generatePassword() {
 for (i = 0; i < passLength; i++) {
   password = password + create[Math.floor(Math.random() * create.length)];
+  console.log(password);
   }
-  return password;
+  return password
 }
 
 
