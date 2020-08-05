@@ -15,6 +15,12 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 console.log("writePassword is working")
 
+
+
+
+
+
+
 //Arrays for randomized choices by the computer
 let create = []
 
@@ -22,7 +28,7 @@ const upperLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"
 
 let lowerLetters = []
 
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 const specChar = ["!", "@", "#", "$", "%", "^", "&", "*", "?", "~", "<", ">"]
 
@@ -44,29 +50,29 @@ while (passLength < 8 || passLength > 128) {
   }
 }
 
-//Uppercase value prompt
+//Uppercase value confirm
 let upperCase = confirm("Would you like to include upper case letters?");
 console.log(upperCase);
 
 if (upperCase === true) {
-  create = create.concat(upperLetters)
+  create = create.concat(upperLetters);
 }
 console.log(create);
 
 
-//Lowercase value prompt
+//Lowercase value confirm
 let lowerCase = confirm("Would you like to include lower case letters?");
 console.log(lowerCase);
 
 if (lowerCase === true) {
   for (i = 0; i < upperLetters.length; i++) {
-    lowerLetters = upperLetters[i].toLowerCase()
+    lowerLetters = upperLetters[i].toLowerCase();
     create = create.concat(lowerLetters);
   }
 }
 console.log(create);
 
-//Numeric value prompt
+//Numeric value confirm
 let num = confirm("Would you like to include numbers?");
 console.log(num);
 
@@ -75,7 +81,7 @@ if (num === true) {
 }
 console.log(create);
 
-//Special characters prompt
+//Special characters confirm
 let special = confirm("Would you like to include special characters?");
 console.log(special);
 
@@ -91,14 +97,14 @@ if (upperCase === false && lowerCase === false && num === false && special === f
 
     let upperCase = confirm("Would you like to include upper case letters?");
       if (upperCase === true) {
-        create = create.concat(upperLetters)
+        create = create.concat(upperLetters);
       }
       console.log(create);
 
     let lowerCase = confirm("Would you like to include lower case letters?");
       if (lowerCase === true) {
         for (i = 0; i < upperLetters.length; i++) {
-          lowerLetters = upperLetters[i].toLowerCase()
+          lowerLetters = upperLetters[i].toLowerCase();
           create = create.concat(lowerLetters);
         }
       }
@@ -123,7 +129,7 @@ if (upperCase === false && lowerCase === false && num === false && special === f
   }
 }
 
-//Main function - generating a password from the desired values
+//Main function - generating a password from the desired values and returning the password. 
 function generatePassword() {
 for (i = 0; i < passLength; i++) {
   password = password + create[Math.floor(Math.random() * create.length)];
