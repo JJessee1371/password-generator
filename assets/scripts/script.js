@@ -106,6 +106,10 @@ if (upperCase === false && lowerCase === false && num === false && special === f
       if (special === true) {
         combinedArr = combinedArr.concat(specChar);
       }
+
+    if (lowerCase === true || upperCase === true || num === true || special === true) {
+      {break};
+      }
   }
 }
 
