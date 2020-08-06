@@ -42,7 +42,7 @@ console.log(passLength);
 //Code will run if the user has not entered a valid number
 while (passLength < 8 || passLength > 128) {
   alert("Value must be between 8 and 128.");
-  let passLength = prompt("Please enter a password length between 8 and 128.");
+  passLength = prompt("Value must be between 8 and 128.");
     
   if (passLength >= 8 && passLength <= 128) {
     console.log(passLength);
@@ -90,6 +90,8 @@ if (special === true) {
 }
 console.log(create);
 
+console.log(passLength);
+
 //Code will run if user has not selected at least one character type to use in the password. 
 if (upperCase === false && lowerCase === false && num === false && special === false) {
   while (upperCase === false && lowerCase === false && num === false && special === false) {
@@ -128,7 +130,7 @@ if (upperCase === false && lowerCase === false && num === false && special === f
     }
   }
 }
-
+console.log(passLength);
 //Main function - generating a password from the desired values and returning the password.
 let password = "" 
 function generatePassword() {
@@ -138,6 +140,7 @@ for (i = 0; i < passLength; i++) {
   }
   return password
 }
+
 
 
 
