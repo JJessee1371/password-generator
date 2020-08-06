@@ -38,10 +38,6 @@ let passLength = prompt("Please enter a password length between 8 and 128.");
 while (passLength < 8 || passLength > 128) {
   alert("Value must be between 8 and 128.");
   passLength = prompt("Value must be between 8 and 128.");
-    
-  // if (passLength >= 8 && passLength <= 128) {
-  //   {break};
-  // }
 }
 
 
@@ -110,11 +106,6 @@ if (upperCase === false && lowerCase === false && num === false && special === f
       if (special === true) {
         combinedArr = combinedArr.concat(specChar);
       }
-      
-
-  if (lowerCase === true || upperCase === true || num === true || special === true) {
-    {break};
-    }
   }
 }
 
