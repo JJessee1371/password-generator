@@ -39,9 +39,9 @@ while (passLength < 8 || passLength > 128) {
   alert("Value must be between 8 and 128.");
   passLength = prompt("Value must be between 8 and 128.");
     
-  if (passLength >= 8 && passLength <= 128) {
-    {break};
-  }
+  // if (passLength >= 8 && passLength <= 128) {
+  //   {break};
+  // }
 }
 
 
