@@ -38,7 +38,7 @@ let passLength = prompt("Please enter a password length between 8 and 128.");
 while (passLength < 8 || passLength > 128) {
   alert("Value must be between 8 and 128.");
   passLength = prompt("Value must be between 8 and 128.");
-}
+};
 
 
 //Confirm if user would like to include uppercase letters
@@ -46,7 +46,7 @@ let upperCase = confirm("Would you like to include upper case letters?");
 
 if (upperCase === true) {
   combinedArr = combinedArr.concat(upperLetters);
-}
+};
 
 
 //Confirm if user would like to include lowercase letters
@@ -56,8 +56,8 @@ if (lowerCase === true) {
   for (i = 0; i < upperLetters.length; i++) {
     lowerLetters = upperLetters[i].toLowerCase();
     combinedArr = combinedArr.concat(lowerLetters);
-  }
-}
+  };
+};
 
 
 //Confirm if user would like to include numeric values
@@ -65,7 +65,7 @@ let num = confirm("Would you like to include numbers?");
 
 if (num === true) {
   combinedArr = combinedArr.concat(numbers);
-}
+};
 
 
 //Confirm if user would like to include special characters
@@ -73,7 +73,7 @@ let special = confirm("Would you like to include special characters?");
 
 if (special === true) {
   combinedArr = combinedArr.concat(specChar);
-}
+};
 
 
 //Code will repeat the above questions until the user has selected at least one character type to use 
@@ -83,7 +83,7 @@ while (upperCase === false && lowerCase === false && num === false && special ==
   let upperCase = confirm("Would you like to include upper case letters?");
     if (upperCase === true) {
       combinedArr = combinedArr.concat(upperLetters);
-    }
+    };
 
 
   let lowerCase = confirm("Would you like to include lower case letters?");
@@ -91,25 +91,25 @@ while (upperCase === false && lowerCase === false && num === false && special ==
       for (i = 0; i < upperLetters.length; i++) {
         lowerLetters = upperLetters[i].toLowerCase();
         combinedArr = combinedArr.concat(lowerLetters);
-      }
-    }
+      };
+    };
       
 
   let num = confirm("Would you like to include numbers?");
     if (num === true) {
       combinedArr = combinedArr.concat(numbers);
-    }
+    };
       
 
   let special = confirm("Would you like to include special characters?");
     if (special === true) {
       combinedArr = combinedArr.concat(specChar);
-    }
+    };
 
   if (lowerCase === true || upperCase === true || num === true || special === true) {
     {break};
-    }
-}
+    };
+};
 
 
 //Main function - generating a password from the desired values and returning the password.
@@ -117,9 +117,9 @@ function generatePassword() {
 let password = "";
 for (i = 0; i < passLength; i++) {
   password = password + combinedArr[Math.floor(Math.random() * combinedArr.length)];
-  }
+  };
   return password;
-}
+};
 
 
 
