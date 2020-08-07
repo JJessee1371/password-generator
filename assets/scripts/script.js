@@ -77,40 +77,38 @@ if (special === true) {
 
 
 //Code will repeat the above questions until the user has selected at least one character type to use 
-if (upperCase === false && lowerCase === false && num === false && special === false) {
-  while (upperCase === false && lowerCase === false && num === false && special === false) {
-    alert("At least one character selection must be made.");
+while (upperCase === false && lowerCase === false && num === false && special === false) {
+  alert("At least one character selection must be made.");
 
-    let upperCase = confirm("Would you like to include upper case letters?");
-      if (upperCase === true) {
-        combinedArr = combinedArr.concat(upperLetters);
+  let upperCase = confirm("Would you like to include upper case letters?");
+    if (upperCase === true) {
+      combinedArr = combinedArr.concat(upperLetters);
+    }
+
+
+  let lowerCase = confirm("Would you like to include lower case letters?");
+    if (lowerCase === true) {
+      for (i = 0; i < upperLetters.length; i++) {
+        lowerLetters = upperLetters[i].toLowerCase();
+        combinedArr = combinedArr.concat(lowerLetters);
       }
-
-
-    let lowerCase = confirm("Would you like to include lower case letters?");
-      if (lowerCase === true) {
-        for (i = 0; i < upperLetters.length; i++) {
-          lowerLetters = upperLetters[i].toLowerCase();
-          combinedArr = combinedArr.concat(lowerLetters);
-        }
-      }
+    }
       
 
-    let num = confirm("Would you like to include numbers?");
-      if (num === true) {
-        combinedArr = combinedArr.concat(numbers);
-      }
+  let num = confirm("Would you like to include numbers?");
+    if (num === true) {
+      combinedArr = combinedArr.concat(numbers);
+    }
       
 
-    let special = confirm("Would you like to include special characters?");
-      if (special === true) {
-        combinedArr = combinedArr.concat(specChar);
-      }
+  let special = confirm("Would you like to include special characters?");
+    if (special === true) {
+      combinedArr = combinedArr.concat(specChar);
+    }
 
-    if (lowerCase === true || upperCase === true || num === true || special === true) {
-      {break};
-      }
-  }
+  if (lowerCase === true || upperCase === true || num === true || special === true) {
+    {break};
+    }
 }
 
 
