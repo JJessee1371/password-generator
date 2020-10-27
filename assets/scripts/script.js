@@ -1,69 +1,54 @@
-const generateBtn = document.querySelector("#generate");
+//Form submission event listener
+document.getElementById('create-form').addEventListener("submit", (event) => {
+  event.preventDefault();
 
-// Write password to the #password input
-function writePassword() {
   let password = generatePassword();
-  let passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-}
-
-generateBtn.addEventListener("click", writePassword);
+  document.querySelector('#password').value = password;
+});
 
 
-//Arrays for randomized choices by the computer
-const lenSelect = document.getElementById('#length');
-const capital = document.getElementById('#capital');
-const lower = document.getElementById('#lower');
-const nums = document.getElementById('#numbers');
-const special = document.getElementById('#special');
-const combinedArr = [];
+//Varaible declarations
+const lenSelect = document.getElementById('length');
+const capital = document.getElementById('capital');
+const lower = document.getElementById('lower');
+const nums = document.getElementById('numbers');
+const special = document.getElementById('special');
+let combinedArr = [];
 const upperLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const lowerLetters = [];
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const specChar = ["!", "@", "#", "$", "%", "^", "&", "*", "?", "~", "<", ">"];
 
+//Convert upperLetters array to lower case letters
+for(i = 0; i < upperLetters.length; i++) {
+  let letter = upperLetters[i].toLowerCase();
+  lowerLetters.push(letter);
+}
 
-//Main function - generating a password from the desired values and returning the password.
+//Generates password based on the user input
 function generatePassword() {
+  console.log(lenSelect.value);
 
+  if(capital.checked) {
+    combinedArr = combinedArr.concat(upperLetters);
+  }
 
+  if(lower.checked) {
+    combinedArr = combinedArr.concat(lowerLetters);
+  }
 
-//Code will repeat the above questions until the user has selected at least one character type to use 
-while (upperCase === false && lowerCase === false && num === false && special === false) {
-  alert("At least one character selection must be made.");
+  if(nums.checked) {
+    combinedArr = combinedArr.concat(numbers);
+  }
 
-  let upperCase = confirm("Would you like to include upper case letters?");
-    if (upperCase === true) {
-      combinedArr = combinedArr.concat(upperLetters);
-    };
+  if(special.checked) {
+    combinedArr = combinedArr.concat(specChar);
+  }
 
-  let lowerCase = confirm("Would you like to include lower case letters?");
-    if (lowerCase === true) {
-      for (i = 0; i < upperLetters.length; i++) {
-        lowerLetters = upperLetters[i].toLowerCase();
-        combinedArr = combinedArr.concat(lowerLetters);
-      };
-    }; 
+  let password = '';
 
-  let num = confirm("Would you like to include numbers?");
-    if (num === true) {
-      combinedArr = combinedArr.concat(numbers);
-    };  
-
-  let special = confirm("Would you like to include special characters?");
-    if (special === true) {
-      combinedArr = combinedArr.concat(specChar);
-    };
-
-  if (lowerCase === true || upperCase === true || num === true || special === true) {
-    {break};
-    };
-};
-
-let password = "";
-for (i = 0; i < passLength; i++) {
-  password = password + combinedArr[Math.floor(Math.random() * combinedArr.length)];
+  for (i = 0; i < lenSelect.value; i++) {
+      password = password + combinedArr[Math.floor(Math.random() * combinedArr.length)];
   };
   return password;
 };

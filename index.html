@@ -19,7 +19,7 @@
         </div>
         <div class="card-body">
           <h3>Select a length and characters to be included:</h3>
-          <form>
+          <form id="create-form">
             <input type="number" id="length" name="length" min="8" max="128">
             <label for="length">Password length, between 8 and 128</label>
             <br>
@@ -45,7 +45,7 @@
           ></textarea>
         </div>
         <div class="card-footer">
-          
+          <span id="error"></span>
         </div>
       </div>
 
