@@ -29,11 +29,12 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: white;
+  color: rgb(240, 25, 25);
+  font-size: 1.75rem;
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
+  background-color: hsl(0, 6%, 85%);
   border-radius: 5px;
   border-width: 1px;
   box-shadow: rgba(170, 27, 27, 0.15) 0px 2px 8px 0px;
@@ -54,6 +55,10 @@ header {
 
 .card-body {
   min-height: 100px;
+}
+
+input {
+  margin: 4px;
 }
 
 .card-footer {
@@ -81,10 +86,10 @@ header {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
   color: hsl(0, 0%, 100%);
-  display: inline-block;
+  display: block;
   font-size: 22px;
   line-height: 22px;
-  margin: 16px 16px 16px 20px;
+  margin: auto;
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;

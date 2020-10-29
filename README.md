@@ -1,10 +1,17 @@
 # Password Generator 
 
-The purpose of this project was to build familiarity with the foundations of JavaScript by writing code that would allow a user to create a randomly generated password. I achieved this goal by using prompts and confirms to gather input from the user and then using that input to randomly generate a password that met the selected criteria. 
+## Description
+Security is a big deal, do you find yourself using the same password over and over putting yourself at risk?
+This application seeks to resolve that issue by construction a completely random password based off of the
+requirements that you wish it to meet. A few simple clicks with the magic of vanilla JavaScript and now
+you've got a password that you can rest at ease knowing will be tough to crack. 
 
-![PasswordScreenshot](https://user-images.githubusercontent.com/66571617/90324881-7ce51180-df31-11ea-9093-4c4e59322b21.PNG)
+![password-gen](https://user-images.githubusercontent.com/66571617/97643085-60bf1f80-1a0c-11eb-8356-7034b1a77a10.PNG)
 
-Link to deployed website: https://jjessee1371.github.io/password-generator/
+## Deployed site
+https://jjessee1371.github.io/password-generator/
 
-Credits:
-The HTML structre and CSS styles along with lines 1-13 of the JavaScript file were provided by the University of Utah Coding Bootcamp program. 
+## Technologies
+1. HTML
+2. CSS
+3. Vanilla JavaScript
