@@ -87,7 +87,40 @@
                 any potential threats. 
             </p>
         </div>
+        <div>
+            <h3>Birthday Attack/Collision Attack</h3>
+            <p>This attack requires a basic understanding of the Birthday paradox. This paradox states that in a room of 23 people, there is a 50-50
+                chance that two people will share the same birthday. However, in a room of 75 individuals, those odds jump to 99.9%. It's very difficult for
+                us to comprehend the likelihood of this happening, and that is exactly that attitude that this attack exploits. If you would like
+                to explore the nitty gritty mathematics of the paradox, you can do so <a href="https://en.wikipedia.org/wiki/Birthday_problem" referrer="blank">here.</a> 
+                It is also important that you know what a cryptographic hash is. If you are unfamiliar, you can read up on the subject 
+                <a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function" referrer="blank">here.</a> Rather than birthdays, this method is based on
+                the idea that 2 different plaintext values will produce the same cryptographic hash (called a collision). Knowing this makes the brute force 
+                process for a hacker easier to execute. Daniel Miessler explains much more elegantly in <a href="https://danielmiessler.com/study/birthday_attack/" referrer="blank">this</a>
+                article. 
+            </p>
+            <h4>Preventitive Measures</h4>
+            <p>Unfortunately for the standard user, there is not much action that can be taken to prevent the execution of this type of attack. Not to fear,
+                as long as your designated security professional knows their stuff, they will have the necessary tools to decrease the likelihood of a successful
+                birthday attack. When a cryptopgraphic hash is created, salt can be added to deter this type of exploitation. Salt is a mix of random values that
+                are added to the hash so even in the event of a collision, the randomly added values will ensure that the 2 hashes no longer appear to be the same
+                and the attacker cannot immediately draw any easy conclusions. 
+            </p>
+        </div>
+        <div>
+            <h3>Rainbow Table Attacks</h3>
+            <p>Imagine that your password has been stored in a database as a cryptogrpahic hash (an irreversible process), even if the hacker is able to steal said 
+                database, your information is safe right? Not exactly. Much like a dictionary attack, the hacker will build their rainbow table by hashing entries
+                from the dictionary or from lists of commonly used passwords. Now the hacker has an entire database of hashed values to use to compare with the captured
+                hashes from your password database! 
+            </p>
+            <h4>Preventitive Measures</h4>
+            <p>To keep yourself safe in this instance, we go back to the basics. Avoid using passwords that are simple and that would be found in a dictionary or commonly
+                used password list. Complexity and length are always a solid first step in ensuring your safety. Secondly, the individuals who are managing the security
+                of your database should include salt in the hashes. By sprinkling randomized values into the hash, even a weak password won't match any of the precomputed 
+                values in the rainbow table of the attacker and they will be forced to result to other methods.
+            </p>
+        </div>
     </section>
-
 </body>
 </html>
